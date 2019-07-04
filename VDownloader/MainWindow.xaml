@@ -4,18 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VDownloader"
+        xmlns:akiravoid="clr-namespace:AkiraVoid"
+        xmlns:themes="clr-namespace:Walterlv.Themes"
         xmlns:Properties="clr-namespace:VDownloader.Properties" x:Name="window" x:Class="VDownloader.MainWindow"
         mc:Ignorable="d"
-        Title="VDownloader" Height="450" Width="800" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
-    <Grid Style="{StaticResource WindowGridStyle}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="{x:Static SystemParameters.WindowCaptionHeight}"/>
-            <RowDefinition Height="1*"/>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0" x:Name="TitleBar" MouseDown="TitleBar_MouseDown">
-            <Image Width="{x:Static SystemParameters.SmallIconWidth}" Height="{x:Static SystemParameters.SmallIconHeight}" Source="{Binding Icon, ElementName=window}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" />
-            <TextBlock VerticalAlignment="Center" Margin="36,8,0,0" HorizontalAlignment="Left">VDownloader</TextBlock>
-            <Button Style="{StaticResource TitleBarButtonClose}" Content="&#xE106;"  x:Name="CloseButton" Click="CloseButton_Click"/>
-        </Grid>
+        Title="VDownloader" Height="450" Width="800"
+        Style="{StaticResource Style.Window.Universal}">
+    <Grid Margin="0,31,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320" />
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Name="MenuBar">
+            <RadioButton Style="{StaticResource MenuButton}"
+                    akiravoid:IconName.Name="menu"
+                    Content="Menu"
+                    FontSize="16"/>
+        </StackPanel>
     </Grid>
 </Window>
