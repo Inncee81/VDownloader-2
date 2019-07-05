@@ -8,7 +8,7 @@
         xmlns:themes="clr-namespace:Walterlv.Themes"
         xmlns:Properties="clr-namespace:VDownloader.Properties" x:Name="window" x:Class="VDownloader.MainWindow"
         mc:Ignorable="d"
-        Title="VDownloader" Height="450" Width="800"
+        Title="VDownloader" MinHeight="650" MinWidth="1000"
         Style="{StaticResource Style.Window.Universal}">
     <Grid Margin="0,31,0,0">
         <Grid.ColumnDefinitions>
@@ -17,9 +17,31 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Name="MenuBar">
             <RadioButton Style="{StaticResource MenuButton}"
-                    akiravoid:IconName.Name="menu"
-                    Content="Menu"
-                    FontSize="16"/>
+                    akiravoid:IconName.Name="cloud_download"
+                    x:Name="DownloadingMenuButton"
+                    Content="Downloading"
+                    FontSize="16" IsChecked="True"/>
+            <RadioButton Style="{StaticResource MenuButton}"
+                    akiravoid:IconName.Name="cloud_done"
+                    Content="Downloaded"
+                    FontSize="16"
+                    x:Name="DownloadedMenuButton"/>
+            <RadioButton Style="{StaticResource MenuButton}"
+                    akiravoid:IconName.Name="add"
+                    Content="Add a task"
+                    FontSize="16"
+                    x:Name="AddTaskMenuButton"/>
+            <RadioButton Style="{StaticResource MenuButton}"
+                    akiravoid:IconName.Name="folder"
+                    Content="Open a torrent file"
+                    FontSize="16"
+                    x:Name="OpenTorrentMenuButton"/>
+            <RadioButton Style="{StaticResource MenuButton}"
+                    akiravoid:IconName.Name="settings"
+                    Content="Settings"
+                    FontSize="16"
+                    x:Name="SettingMenuButton"/>
         </StackPanel>
+        <Grid Grid.Column="1"></Grid>
     </Grid>
 </Window>
