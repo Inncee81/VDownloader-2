@@ -20,28 +20,34 @@
                     akiravoid:IconName.Name="cloud_download"
                     x:Name="DownloadingMenuButton"
                     Content="Downloading"
-                    FontSize="16" IsChecked="True"/>
+                    FontSize="16" IsChecked="True"
+                    Click="DownloadingMenuButton_Click"/>
             <RadioButton Style="{StaticResource MenuButton}"
                     akiravoid:IconName.Name="cloud_done"
                     Content="Downloaded"
                     FontSize="16"
-                    x:Name="DownloadedMenuButton"/>
+                    x:Name="DownloadedMenuButton"
+                    Click="DownloadedMenuButton_Click"/>
             <RadioButton Style="{StaticResource MenuButton}"
                     akiravoid:IconName.Name="add"
                     Content="Add a task"
                     FontSize="16"
-                    x:Name="AddTaskMenuButton"/>
+                    x:Name="AddTaskMenuButton"
+                    Click="AddTaskMenuButton_Click"/>
             <RadioButton Style="{StaticResource MenuButton}"
                     akiravoid:IconName.Name="folder"
                     Content="Open a torrent file"
                     FontSize="16"
-                    x:Name="OpenTorrentMenuButton"/>
+                    x:Name="OpenTorrentMenuButton"
+                    Click="OpenTorrentMenuButton_Click"/>
             <RadioButton Style="{StaticResource MenuButton}"
                     akiravoid:IconName.Name="settings"
                     Content="Settings"
                     FontSize="16"
-                    x:Name="SettingMenuButton"/>
+                    x:Name="SettingMenuButton"
+                    Click="SettingMenuButton_Click"/>
         </StackPanel>
-        <Grid Grid.Column="1"></Grid>
+        <ContentControl Grid.Column="1" x:Name="ContentHolder"
+                        Margin="14,0,14,24"></ContentControl>
     </Grid>
 </Window>

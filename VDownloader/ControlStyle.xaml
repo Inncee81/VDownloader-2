@@ -15,7 +15,7 @@
                         <WrapPanel VerticalAlignment="Center">
                             <Rectangle
                                 x:Name="CheckIn"
-                                Width="5"
+                                Width="4"
                                 Height="24"
                                 Margin="0,0,10,0"
                                 Fill="White"
