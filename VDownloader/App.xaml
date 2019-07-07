@@ -10,15 +10,6 @@
                 <ResourceDictionary Source="ControlStyle.xaml"/>
                 <ResourceDictionary Source="Fonts.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            <Style x:Key="HighEmphasisText">
-                <Setter Property="TextElement.Foreground" Value="#DD000000"/>
-            </Style>
-            <Style x:Key="MediumEmphasisText">
-                <Setter Property="TextElement.Foreground" Value="#99000000"/>
-            </Style>
-            <Style x:Key="DisabledText">
-                <Setter Property="TextElement.Foreground" Value="#60000000"/>
-            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

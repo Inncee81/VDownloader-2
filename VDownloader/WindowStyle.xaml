@@ -1,7 +1,8 @@
 ﻿<!-- Window.Universal.xaml -->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:themes="clr-namespace:Walterlv.Themes">
+                    xmlns:themes="clr-namespace:Walterlv.Themes"
+                    >
     <Style x:Key="Style.Window.Universal" TargetType="Window">
         <Style.Resources>
             <SolidColorBrush x:Key="Brush.TitleBar.Foreground" Color="{Binding Path=(themes:UniversalWindowStyle.TitleBar).ForegroundColor, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" />
