@@ -164,12 +164,37 @@
                             </StackPanel>
                             <WrapPanel Name="FunctionArea"
                                        HorizontalAlignment="Left" Margin="0,4,0,8">
+                                <Button Content="Start"
+                                        akiravoid:IconName.Name="play_arrow"
+                                        IsEnabled="{TemplateBinding akiravoid:DownloadListButtonProperty.StartButtonIsEnabled}"
+                                        Name="StartButton"
+                                        Click="StartButton_Click"
+                                        Style="{StaticResource SimpleButton}"
+                                        Margin="0,0,8,0">
+                                </Button>
                                 <Button Content="Pause"
                                         akiravoid:IconName.Name="pause"
-                                        IsEnabled="{TemplateBinding akiravoid:PauseButtonProperty.IsEnabled}"
+                                        IsEnabled="{TemplateBinding akiravoid:DownloadListButtonProperty.PauseButtonIsEnabled}"
                                         Name="PauseButton"
                                         Click="PauseButton_Click"
-                                        Style="{StaticResource SimpleButton}">
+                                        Style="{StaticResource SimpleButton}"
+                                        Margin="0,0,8,0">
+                                </Button>
+                                <Button Content="Stop"
+                                        akiravoid:IconName.Name="stop"
+                                        IsEnabled="{TemplateBinding akiravoid:DownloadListButtonProperty.StopButtonIsEnabled}"
+                                        Name="StopButton"
+                                        Click="StopButton_Click"
+                                        Style="{StaticResource SimpleButton}"
+                                        Margin="0,0,8,0">
+                                </Button>
+                                <Button Content="Delete"
+                                        akiravoid:IconName.Name="delete"
+                                        IsEnabled="{TemplateBinding akiravoid:DownloadListButtonProperty.DeleteButtonIsEnabled}"
+                                        Name="DeleteButton"
+                                        Click="DeleteButton_Click"
+                                        Style="{StaticResource SimpleButton}"
+                                        Margin="0,0,8,0">
                                 </Button>
                             </WrapPanel>
                         </StackPanel>

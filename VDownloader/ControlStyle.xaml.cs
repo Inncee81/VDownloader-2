@@ -50,23 +50,136 @@ namespace AkiraVoid
             DependencyProperty.RegisterAttached("Data", typeof(int), typeof(ProgressBarData), new PropertyMetadata(0));
     }
     /// <summary>
-    /// DownloadList 中的 PauseButton 的相关属性
+    /// DownloadList 中的 Button 的相关属性
     /// </summary>
-    public class PauseButtonProperty : DependencyObject
+    public class DownloadListButtonProperty : DependencyObject
     {
-        #region IsEnabled 属性
-        public static Boolean GetIsEnabled(DependencyObject obj)
+        #region PauseButtonIsEnabled 属性
+        public static Boolean GetPauseButtonIsEnabled(DependencyObject obj)
         {
-            return (Boolean)obj.GetValue(IsEnabledProperty);
+            return (Boolean)obj.GetValue(PauseButtonIsEnabledProperty);
         }
 
-        public static void SetIsEnabled(DependencyObject obj, Boolean value)
+        public static void SetPauseButtonIsEnabled(DependencyObject obj, Boolean value)
         {
-            obj.SetValue(IsEnabledProperty, value);
+            obj.SetValue(PauseButtonIsEnabledProperty, value);
         }
 
-        public static readonly DependencyProperty IsEnabledProperty =
-            DependencyProperty.RegisterAttached("IsEnabled", typeof(Boolean), typeof(PauseButtonProperty), new PropertyMetadata(true));
+        public static readonly DependencyProperty PauseButtonIsEnabledProperty =
+            DependencyProperty.RegisterAttached("PauseButtonIsEnabled", typeof(Boolean), typeof(DownloadListButtonProperty), new PropertyMetadata(true));
+        #endregion
+        #region StartButtonIsEnabled 属性
+
+
+        public static Boolean GetStartButtonIsEnabled(DependencyObject obj)
+        {
+            return (Boolean)obj.GetValue(StartButtonIsEnabledProperty);
+        }
+
+        public static void SetStartButtonIsEnabled(DependencyObject obj, Boolean value)
+        {
+            obj.SetValue(StartButtonIsEnabledProperty, value);
+        }
+
+        public static readonly DependencyProperty StartButtonIsEnabledProperty =
+            DependencyProperty.RegisterAttached("StartButtonIsEnabled", typeof(Boolean), typeof(DownloadListButtonProperty), new PropertyMetadata(true));
+
+
+        #endregion
+        #region StopButtonIsEnabled 属性
+
+
+        public static Boolean GetStopButtonIsEnabled(DependencyObject obj)
+        {
+            return (Boolean)obj.GetValue(StopButtonIsEnabledProperty);
+        }
+
+        public static void SetStopButtonIsEnabled(DependencyObject obj, Boolean value)
+        {
+            obj.SetValue(StopButtonIsEnabledProperty, value);
+        }
+
+        public static readonly DependencyProperty StopButtonIsEnabledProperty =
+            DependencyProperty.RegisterAttached("StopButtonIsEnabled", typeof(Boolean), typeof(DownloadListButtonProperty), new PropertyMetadata(true));
+
+
+        #endregion
+        #region DeleteButtonIsEnabled 属性
+
+
+        public static Boolean GetDeleteButtonIsEnabled(DependencyObject obj)
+        {
+            return (Boolean)obj.GetValue(DeleteButtonIsEnabledProperty);
+        }
+
+        public static void SetDeleteButtonIsEnabled(DependencyObject obj, Boolean value)
+        {
+            obj.SetValue(DeleteButtonIsEnabledProperty, value);
+        }
+
+        public static readonly DependencyProperty DeleteButtonIsEnabledProperty =
+            DependencyProperty.RegisterAttached("DeleteButtonIsEnabled", typeof(Boolean), typeof(DownloadListButtonProperty), new PropertyMetadata(true));
+
+
+        #endregion
+    }
+    public class DownloadListItemProperty : DependencyObject
+    {
+        #region ItemID 属性
+
+
+        public static int GetItemID(DependencyObject obj)
+        {
+            return (int)obj.GetValue(ItemIDProperty);
+        }
+
+        public static void SetItemID(DependencyObject obj, int value)
+        {
+            obj.SetValue(ItemIDProperty, value);
+        }
+
+        public static readonly DependencyProperty ItemIDProperty =
+            DependencyProperty.RegisterAttached("ItemID", typeof(int), typeof(DownloadListItemProperty), new PropertyMetadata(0));
+
+
+        #endregion
+        // TODO: 测试完成之后删除这个属性(ProjectName 应该从一个 xml 文档中读出)
+        #region ProjectName 属性
+
+
+        public static String GetProjectName(DependencyObject obj)
+        {
+            return (String)obj.GetValue(ProjectNameProperty);
+        }
+
+        public static void SetProjectName(DependencyObject obj, String value)
+        {
+            obj.SetValue(ProjectNameProperty, value);
+        }
+
+        public static readonly DependencyProperty ProjectNameProperty =
+            DependencyProperty.RegisterAttached("ProjectName", typeof(String), typeof(DownloadListItemProperty), new PropertyMetadata(""));
+
+
+        #endregion
+        // TODO: 测试完成之后删除这个属性(Date 应该从一个 xml 文档中读出)
+        #region Date 属性
+
+        //按理来说这里应该使用 Date 返回类型，但该属性只用于显示，因此使用更方便的 String 类型
+        public static String GetDate(DependencyObject obj)
+        {
+            return (String)obj.GetValue(DateProperty);
+        }
+
+        public static void SetDate(DependencyObject obj, String value)
+        {
+            obj.SetValue(DateProperty, value);
+        }
+
+        public static readonly DependencyProperty DateProperty =
+            DependencyProperty.RegisterAttached("Date", typeof(String), typeof(DownloadListItemProperty), new PropertyMetadata("1977-06-08"));
+
+
         #endregion
     }
     /// <summary>
@@ -77,6 +190,21 @@ namespace AkiraVoid
         private void PauseButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("hi");
+        }
+
+        private void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void StopButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

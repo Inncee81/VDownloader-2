@@ -12,8 +12,8 @@
 
     <StackPanel>
         <ListBox BorderThickness="0">
-            <ListBoxItem Style="{StaticResource DownloadItems}" akiravoid:PauseButtonProperty.IsEnabled="True"></ListBoxItem>
-            <ListBoxItem Style="{StaticResource DownloadItems}" akiravoid:PauseButtonProperty.IsEnabled="False"></ListBoxItem>
+            <ListBoxItem Style="{StaticResource DownloadItems}" akiravoid:DownloadListButtonProperty.PauseButtonIsEnabled="True"></ListBoxItem>
+            <ListBoxItem Style="{StaticResource DownloadItems}" akiravoid:DownloadListButtonProperty.PauseButtonIsEnabled="False"></ListBoxItem>
         </ListBox>
     </StackPanel>
 </Page>
