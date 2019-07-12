@@ -129,12 +129,12 @@
                         <StackPanel>
                             <WrapPanel Name="ContentArea">
                                 <TextBlock 
-                                    Text="Progect Name"
+                                    Text="{TemplateBinding akiravoid:DownloadListItemProperty.ProjectName}"
                                     FontSize="20"
-                                    Style="{StaticResource HighEmphasisText}" VerticalAlignment="Bottom"/>
+                                    Style="{StaticResource HighEmphasisText}" VerticalAlignment="Center"/>
                                 <TextBlock 
-                                    Text="Date"
-                                    VerticalAlignment="Bottom"
+                                    Text="{TemplateBinding akiravoid:DownloadListItemProperty.Date}"
+                                    VerticalAlignment="Center"
                                     FontSize="12"
                                     Style="{StaticResource MediumEmphasisText}" Margin="4,0,0,0"/>
                             </WrapPanel>

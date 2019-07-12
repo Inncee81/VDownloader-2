@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Xml;
 
 namespace AkiraVoid
 {
@@ -50,7 +51,7 @@ namespace AkiraVoid
             DependencyProperty.RegisterAttached("Data", typeof(int), typeof(ProgressBarData), new PropertyMetadata(0));
     }
     /// <summary>
-    /// DownloadList 中的 Button 的相关属性
+    /// DownloadList 中的 Item 的 Button 的相关属性
     /// </summary>
     public class DownloadListButtonProperty : DependencyObject
     {
@@ -123,27 +124,29 @@ namespace AkiraVoid
 
         #endregion
     }
+    /// <summary>
+    /// DownloadList 中每个 Item 的属性
+    /// </summary>
     public class DownloadListItemProperty : DependencyObject
     {
         #region ItemID 属性
 
 
-        public static int GetItemID(DependencyObject obj)
+        public static String GetItemID(DependencyObject obj)
         {
-            return (int)obj.GetValue(ItemIDProperty);
+            return (String)obj.GetValue(ItemIDProperty);
         }
 
-        public static void SetItemID(DependencyObject obj, int value)
+        public static void SetItemID(DependencyObject obj, String value)
         {
             obj.SetValue(ItemIDProperty, value);
         }
 
         public static readonly DependencyProperty ItemIDProperty =
-            DependencyProperty.RegisterAttached("ItemID", typeof(int), typeof(DownloadListItemProperty), new PropertyMetadata(0));
+            DependencyProperty.RegisterAttached("ItemID", typeof(String), typeof(DownloadListItemProperty), new PropertyMetadata(""));
 
 
         #endregion
-        // TODO: 测试完成之后删除这个属性(ProjectName 应该从一个 xml 文档中读出)
         #region ProjectName 属性
 
 
@@ -158,11 +161,10 @@ namespace AkiraVoid
         }
 
         public static readonly DependencyProperty ProjectNameProperty =
-            DependencyProperty.RegisterAttached("ProjectName", typeof(String), typeof(DownloadListItemProperty), new PropertyMetadata(""));
+            DependencyProperty.RegisterAttached("ProjectName", typeof(String), typeof(DownloadListItemProperty), new PropertyMetadata("Unknown"));
 
 
         #endregion
-        // TODO: 测试完成之后删除这个属性(Date 应该从一个 xml 文档中读出)
         #region Date 属性
 
         //按理来说这里应该使用 Date 返回类型，但该属性只用于显示，因此使用更方便的 String 类型
@@ -194,7 +196,7 @@ namespace AkiraVoid
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-
+            VDownloader.Config.CreateXmlFile("Test","test",@"\Test",".red");
         }
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
