@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Xml;
+using VDownloader;
 
 namespace AkiraVoid
 {
@@ -191,22 +192,26 @@ namespace AkiraVoid
     {
         private void PauseButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("hi");
+            CacheFileEditor editor = new CacheFileEditor("test", 100, 1, false);
+            editor.Edit();
         }
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            VDownloader.Config.CreateXmlFile("Test","test",@"\Test",".red");
+            Config.CreateCacheFile("test", "Test Task", (UInt64)10000);
         }
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
-
+            CacheFileEditor editor = new CacheFileEditor("test", 0, 0, false);
+            editor.Edit();
+            // 删除已下载文件
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-
+            // 这个按钮只在任务停止时有用，删除任务文件
+            Config.DeleteCacheFile("test");
         }
     }
 }
